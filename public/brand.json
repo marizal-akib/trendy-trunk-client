@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+      "brandName": "Nike",
+      "brandImageURL": "https://i.ibb.co/LgXgSnn/png-transparent-nike-swoosh-logo-desktop-just-do-it-nike-angle-text-monochrome-removebg-preview.png",
+      "bannerURLs": [
+        "https://example.com/nike_banner1.jpg",
+        "https://example.com/nike_banner2.jpg",
+        "https://example.com/nike_banner3.jpg"
+      ]
+    },
+    {
+        "id": 2,
+      "brandName": "Adidas",
+      "brandImageURL": "https://i.ibb.co/Z11ZLc8/png-transparent-adidas-adidas-angle-text-logo-removebg-preview.png",
+      "bannerURLs": [
+        "https://example.com/adidas_banner1.jpg",
+        "https://example.com/adidas_banner2.jpg",
+        "https://example.com/adidas_banner3.jpg"
+      ]
+    },
+    {
+        "id": 3,
+      "brandName": "Gucci",
+      "brandImageURL": "https://i.ibb.co/rbWMWg9/png-transparent-gucci-logo-gucci-chanel-fashion-logo-louis-vuitton-gucci-shoe-line-italian-fashion-r.png",
+      "bannerURLs": [
+        "https://example.com/gucci_banner1.jpg",
+        "https://example.com/gucci_banner2.jpg",
+        "https://example.com/gucci_banner3.jpg"
+      ]
+    },
+    {
+        "id": 4,
+      "brandName": "Zara",
+      "brandImageURL": "https://i.ibb.co/QkMzFnk/png-transparent-zara-hd-logo-removebg-preview.png",
+      "bannerURLs": [
+        "https://example.com/zara_banner1.jpg",
+        "https://example.com/zara_banner2.jpg",
+        "https://example.com/zara_banner3.jpg"
+      ]
+    },
+    {
+        "id": 5,
+      "brandName": "H&M",
+      "brandImageURL": "https://i.ibb.co/Q6qHbWf/png-transparent-h-m-hd-logo-removebg-preview.png",
+      "bannerURLs": [
+        "https://example.com/hm_banner1.jpg",
+        "https://example.com/hm_banner2.jpg",
+        "https://example.com/hm_banner3.jpg"
+      ]
+    },
+    {
+        "id": 6,
+      "brandName": "Levi's",
+      "brandImageURL": "https://i.ibb.co/ZfFkVp5/png-transparent-levi-039-s-hd-logo-removebg-preview.png",
+      "bannerURLs": [
+        "https://example.com/levis_banner1.jpg",
+        "https://example.com/levis_banner2.jpg",
+        "https://example.com/levis_banner3.jpg"
+      ]
+    }
+  ]
