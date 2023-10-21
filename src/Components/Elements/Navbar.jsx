@@ -1,4 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
+import {GiShoppingCart} from "react-icons/gi";
+import {FcGoogle} from "react-icons/fc";
 
 const Navbar = () => {
   const navLink = (
@@ -56,10 +58,11 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-end">
+          <Link to='/my-cart' className="text-2xl mx-2"><GiShoppingCart/></Link>
         <div>
         {/* Open the modal using document.getElementById('ID').showModal() method */}
         <button
-          className="btn"
+          className="btn mx-2"
           onClick={() => document.getElementById("my_modal_5").showModal()}
         >
           Login
@@ -70,7 +73,7 @@ const Navbar = () => {
               <div className="text-center bg-opacity-50 bg-blue-200 mt-8 h-full">
                 <div className="py-4">
                 <h3 className="font-bold mt-3 py-2 text-xl">Login with</h3>
-                    <button className="btn text-xs font-semibold py-2 ">Google</button>
+                    <button className="btn text-xs font-semibold py-2 "><span className="text-lg"><FcGoogle/></span> Google</button>
                 <p className="py-0 font-bold text-xl">
                   or 
                 </p>
@@ -80,7 +83,7 @@ const Navbar = () => {
                     
               </div>
               <div className="text-center bg-opacity-50 bg-rose-200 mt-8 h-full ">
-                <div className="py-4 h-full justify-center">
+                <div className="py-4 h-full my-auto">
                 <h3 className="font-bold  py-2 text-xl">Create,<br />Account </h3>
                 <p className="text-xs">
                   Sing-up if you still do not have an account... 
@@ -99,7 +102,6 @@ const Navbar = () => {
         </dialog>
         </div>
 
-        <button className="btn mx-2">my cart</button>
 
       </div>
     </div>
