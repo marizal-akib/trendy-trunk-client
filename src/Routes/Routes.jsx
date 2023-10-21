@@ -6,13 +6,14 @@ import SingUp from "../Components/Elements/SingUp";
 import AddProduct from "../Components/Pages/AddProduct";
 import MyCart from "../Components/Pages/MyCart";
 import About from "../Components/Pages/About";
-import BrandShop from "../Components/Pages/BrandShop/BrandShop";
 import BrandProduct from "../Components/Pages/BrandShop/BrandProduct";
+import PageError from "../Components/Pages/PageError";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<PageError></PageError>,
     children:[
         {
             path:"/",
