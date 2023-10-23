@@ -68,9 +68,9 @@ const Navbar = () => {
           Login
         </button>
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
-          <div className="modal-box bg-opacity-60 ">
+          <div className="modal-box bg-opacity-80 ">
             <div className="md:grid md:grid-cols-2 grid-cols-1 items-center  gap-3">
-              <div className="text-center bg-opacity-80 bg-blue-200 mt-8 h-full">
+              <div className="text-center bg-opacity-90 bg-blue-200 mt-8 h-full">
                 <div className="py-4">
                 <h3 className="font-bold mt-3 py-2 text-xl">Login with</h3>
                     <button className="btn text-xs font-semibold py-2 "><span className="text-lg"><FcGoogle/></span> Google</button>
@@ -82,13 +82,13 @@ const Navbar = () => {
                 </div>
                     
               </div>
-              <div className="text-center bg-opacity-80 bg-rose-200 mt-8 h-full ">
+              <div className="text-center bg-opacity-90 bg-rose-200 mt-8 h-full ">
                 <div className="py-4 h-full my-auto">
                 <h3 className="font-bold  py-2 text-xl">Create,<br />Account </h3>
                 <p className="text-xs">
-                  Sing-up if you still do not have an account... 
+                  Sign-up if you still do not have an account... 
                 </p>
-                <Link to='/sing-up' className="btn mt-2 h-auto text-xs font-semibold"> Sing Up </Link>
+                <Link to='/sign-up' className="btn mt-2 h-auto text-xs font-semibold"> Sign Up </Link>
                 </div>
               </div>
             </div>

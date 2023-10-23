@@ -10,10 +10,11 @@ const SAbout = () => {
     >
       <div className="hero-overlay bg-opacity-10"></div>
       <div className="hero-content ">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="row-span-2">
+        <div className="grid md:grid-cols-3  gap-4">
+          <div className="row-span-2 md:col-span-1 col-span-2 ">
             <Link to="product/6">
               <img
+              className=""
                 src="https://i.ibb.co/9GSfsqw/56d6f03e82ee57b731adef06a0910b52.jpg"
                 alt=""
               />
@@ -22,7 +23,7 @@ const SAbout = () => {
               </h2>
             </Link>
           </div>
-          <div>
+          <div className="col-span-1">
             <Link to="product/2">
               <img
                 src="https://i.ibb.co/vwYzSqK/54de19fa9c0db8e3de6ebc1e7e39efd8.jpg"
@@ -33,7 +34,7 @@ const SAbout = () => {
               </h2>
             </Link>
           </div>
-          <div>
+          <div className="col-span-1">
             <Link to="product/1">
               <img
                 src="https://i.ibb.co/dpgCSkc/Fbk-4p-MUYAA-t-On.jpg"
@@ -44,7 +45,7 @@ const SAbout = () => {
               </h2>
             </Link>
           </div>
-          <div className="col-span-2 text-center  px-14">
+          <div className="md:col-span-2 col-span-3 text-center  md:px-14">
             <p className="mb-3">
               Trendy Trunk is your go-to fashion destination, offering the
               latest styles from Nike, Adidas, Gucci, Zara, H&M, and Levi's.

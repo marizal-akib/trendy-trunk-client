@@ -8,6 +8,7 @@ import MyCart from "../Components/Pages/MyCart";
 import About from "../Components/Pages/About";
 import BrandProduct from "../Components/Pages/BrandShop/BrandProduct";
 import PageError from "../Components/Pages/PageError";
+import Update from "../Components/Elements/Update";
 
 const router = createBrowserRouter([
   {
@@ -33,12 +34,16 @@ const router = createBrowserRouter([
             element:<Login></Login>
         },
         {
-            path:"/sing-up",
+            path:"/sign-up",
             element:<SingUp></SingUp>
         },
         {
             path:"/my-cart",
             element:<MyCart></MyCart>
+        },
+        {
+            path:"/update",
+            element:<Update></Update>
         },
         {
             path:"/product/:id",
