@@ -6,22 +6,26 @@ import Banner from "./Banner";
 import SAbout from "./SAbout";
 
 const Home = () => {
-  const brands = useLoaderData();
+  const allProducts = useLoaderData();
+  const brands = allProducts.filter((products) => products.logo);
+  console.log(brands);
 
   return (
     <div>
       <Banner></Banner>
       <Marquee className="mt-5 " speed={75} pauseOnHover={true}>
         {brands.map((brand) => (
-          <div className="text-center ml-2 " key={brand.id}>
+          <div className="text-center ml-2 " key={brand._id}>
             {" "}
-            <Link to={`/product/${brand.id}`}>
+            <Link to={`/product/${brand.brand_Name}`}>
               <img
                 className="md:h-32 h-10"
-                src={brand.brandImageURL}
-                alt={brand.brandName}
+                src={brand.logo}
+                alt={brand.brand_Name}
               />
-            <p className="mb-2 hover:underline uppercase font-semibold">{brand.brandName}</p>
+              <p className="mb-2 hover:underline uppercase font-semibold">
+                {brand.brand_Name}
+              </p>
             </Link>
           </div>
         ))}
