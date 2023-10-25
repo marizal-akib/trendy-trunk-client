@@ -105,5 +105,4 @@ const BrandProduct = () => {
     </div>
   );
 };
-
 export default BrandProduct;

@@ -35,7 +35,7 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-10"></div>
         <div className="hero-content ">
           <div>
-            <Link to="/product/5">
+            <Link to="/brand/H&M">
               <img src="https://i.ibb.co/tX6cj6W/19-10-23-block-6.jpg" alt="" />
               <h2 className="relative bottom-8 ml-1 text-white underline md:text-base text-xs font-light">
                H&M Men's winter warmers
@@ -43,7 +43,7 @@ const Banner = () => {
             </Link>
           </div>
           <div>
-            <Link to="product/4">
+            <Link to="brand/Zara">
               <img
                 src="https://i.ibb.co/sH5Wx7X/womens-2-coats-jackets.jpg"
                 alt=""
@@ -54,7 +54,7 @@ const Banner = () => {
             </Link>
           </div>
           <div>
-            <Link to="product/3">
+            <Link to="brand/Gucci">
               <img src="https://i.ibb.co/0XV4VGJ/19-10-23-block-5.jpg" alt="" />
 
               <h2 className="relative bottom-8 ml-1 text-white underline md:text-base text-xs font-light">

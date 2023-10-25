@@ -12,7 +12,7 @@ const SAbout = () => {
       <div className="hero-content ">
         <div className="grid md:grid-cols-3  gap-4">
           <div className="row-span-2 md:col-span-1 col-span-2 ">
-            <Link to="product/6">
+            <Link to="brand/Levi's">
               <img
               className=""
                 src="https://i.ibb.co/9GSfsqw/56d6f03e82ee57b731adef06a0910b52.jpg"
@@ -24,7 +24,7 @@ const SAbout = () => {
             </Link>
           </div>
           <div className="col-span-1">
-            <Link to="product/2">
+            <Link to="brand/Adidas">
               <img
                 src="https://i.ibb.co/vwYzSqK/54de19fa9c0db8e3de6ebc1e7e39efd8.jpg"
                 alt=""
@@ -35,7 +35,7 @@ const SAbout = () => {
             </Link>
           </div>
           <div className="col-span-1">
-            <Link to="product/1">
+            <Link to="brand/Nike">
               <img
                 src="https://i.ibb.co/dpgCSkc/Fbk-4p-MUYAA-t-On.jpg"
                 alt=""

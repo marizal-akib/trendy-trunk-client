@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import Footer from "../../Elements/Footer";
 import Banner from "./Banner";
 import SAbout from "./SAbout";
+import { useContext } from "react";
+import { CartContext } from "../../../Providers/CartProvider";
 
 const Home = () => {
+  const {cartInfo} = useContext(CartContext);
   const allProducts = useLoaderData();
   const brands = allProducts.filter((products) => products.logo);
-  console.log(brands);
+  console.log(cartInfo);
 
   return (
     <div>
@@ -17,7 +20,7 @@ const Home = () => {
         {brands.map((brand) => (
           <div className="text-center ml-2 " key={brand._id}>
             {" "}
-            <Link to={`/product/${brand.brand_Name}`}>
+            <Link to={`/brand/${brand.brand_Name}`}>
               <img
                 className="md:h-32 h-10"
                 src={brand.logo}

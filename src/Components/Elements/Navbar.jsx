@@ -1,16 +1,42 @@
-import { Link, NavLink } from "react-router-dom";
-import {GiShoppingCart} from "react-icons/gi";
-import {FcGoogle} from "react-icons/fc";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { GiShoppingCart } from "react-icons/gi";
+import { FcGoogle } from "react-icons/fc";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // auth
+  const { singInWithGoogle, user,logOut } = useContext(AuthContext);
+  const handleGoogleLogin = () => {
+    singInWithGoogle()
+      .then((res) => {
+        console.log(res.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  };
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
+
   const navLink = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <>
+      {
+        user && <li>
         <NavLink to="/add-product">Add Product</NavLink>
       </li>
+      }
+      </>
+      
       <li>
         <NavLink to="/about">About</NavLink>
       </li>
@@ -22,7 +48,7 @@ const Navbar = () => {
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <svg 
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               fill="none"
@@ -49,7 +75,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center ">
-        <Link to="/" className="btn h-24 btn-ghost normal-case text-xl">
+        <Link to="/" className="btn h-24 btn-ghost mx-5 normal-case text-xl">
           <img
             className="w-20 "
             src="https://i.ibb.co/0nDxPyP/Screenshot-2023-10-20-232439-removebg-preview.png"
@@ -58,51 +84,114 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-end">
-          <Link to='/my-cart' className="text-2xl mx-2"><GiShoppingCart/></Link>
-        <div>
-        {/* Open the modal using document.getElementById('ID').showModal() method */}
-        <button
-          className="btn mx-2"
-          onClick={() => document.getElementById("my_modal_5").showModal()}
-        >
-          Login
-        </button>
-        <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
-          <div className="modal-box bg-opacity-80 ">
-            <div className="md:grid md:grid-cols-2 grid-cols-1 items-center  gap-3">
-              <div className="text-center bg-opacity-90 bg-blue-200 mt-8 h-full">
-                <div className="py-4">
-                <h3 className="font-bold mt-3 py-2 text-xl">Login with</h3>
-                    <button className="btn text-xs font-semibold py-2 "><span className="text-lg"><FcGoogle/></span> Google</button>
-                <p className="py-0 font-bold text-xl">
-                  or 
-                </p>
-                <Link to="/login" className="btn text-white btn-primary py-2 px-4  h-auto text-xs font-semibold">Email<br />and<br />Password </Link>
+        <Link to="/my-cart" className="text-2xl mx-2">
+          <GiShoppingCart />
+        </Link>
 
-                </div>
-                    
+        {user ? (
+          <>
+          <div className="flex flex-col-reverse mx-3 items-center md:flex-row-reverse">
+
+            {user.displayName ? (
+              <h2 className="text-[#ff908b]  md:text-base text-xs font-semibold">
+                {user.displayName}
+              </h2>
+            ) : (
+              <h2 className="text-[#ff908b]  md:text-base text-xs font-semibold">
+                {user.email}
+              </h2>
+            )}
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full ">
+                {user.photoURL ? (
+                  <img src={user.photoURL} />
+                ) : (
+                  <img src="https://i.ibb.co/XXJqk0N/user.png" alt="" />
+                )}
               </div>
-              <div className="text-center bg-opacity-90 bg-rose-200 mt-8 h-full ">
-                <div className="py-4 h-full my-auto">
-                <h3 className="font-bold  py-2 text-xl">Create,<br />Account </h3>
-                <p className="text-xs">
-                  Sign-up if you still do not have an account... 
-                </p>
-                <Link to='/sign-up' className="btn mt-2 h-auto text-xs font-semibold"> Sign Up </Link>
-                </div>
-              </div>
-            </div>
-            <div className="  modal-action">
-              <form method="dialog ">
-                {/* if there is a button in form, it will close the modal */}
-                <button className="btn mt-3 text-white bg-slate-500">Close</button>
-              </form>
-            </div>
+            </label>
           </div>
-        </dialog>
-        </div>
-
-
+            <button
+              onClick={handleSignOut}
+              className="btn hover:bg-[#ff908b] bg-[#ff908b] hover:bg-opacity-60  md:text-base text-xs  mx-2 text-white border-none"
+            >
+              Sign-Out
+            </button>
+          </>
+        ) : (
+          <>
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button
+              className="btn md:text-base text-xs mx-2"
+              onClick={() => document.getElementById("my_modal_5").showModal()}
+            >
+              Login
+            </button>
+            <dialog
+              id="my_modal_5"
+              className="modal modal-bottom sm:modal-middle "
+            >
+              <div className="modal-box bg-[#ffbd8b] bg-opacity-80 ">
+                <div className="md:grid md:grid-cols-2 grid-cols-1 items-center  gap-3">
+                  <div className="text-center bg-opacity-90 bg-blue-200 mt-8 h-full">
+                    <div className="py-4">
+                      <h3 className="font-bold mt-3 py-2 text-xl">
+                        Login with
+                      </h3>
+                      <button
+                        onClick={handleGoogleLogin}
+                        className="btn text-xs font-semibold py-2 "
+                      >
+                        <span className="text-lg">
+                          <FcGoogle />
+                        </span>{" "}
+                        Google
+                      </button>
+                      <p className="py-0 font-bold text-xl">or</p>
+                      <Link
+                        to="/login"
+                        className="btn text-white btn-primary py-2 px-4  h-auto text-xs font-semibold"
+                      >
+                        Email
+                        <br />
+                        and
+                        <br />
+                        Password{" "}
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="text-center bg-opacity-90 bg-rose-200 mt-8 h-full ">
+                    <div className="py-4 h-full my-auto">
+                      <h3 className="font-bold  py-2 text-xl">
+                        Create,
+                        <br />
+                        Account{" "}
+                      </h3>
+                      <p className="text-xs">
+                        Sign-up if you still do not have an account...
+                      </p>
+                      <Link
+                        to="/sign-up"
+                        className="btn mt-2 h-auto text-xs font-semibold"
+                      >
+                        {" "}
+                        Sign Up{" "}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="  modal-action">
+                  <form method="dialog ">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn mt-3 text-white bg-slate-500">
+                      Close
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
+          </>
+        )}
       </div>
     </div>
   );
