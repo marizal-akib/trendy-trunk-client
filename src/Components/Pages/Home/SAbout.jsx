@@ -57,7 +57,7 @@ const SAbout = () => {
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
-              className="btn mt-6 text-black bg-[#F3F0EC]"
+              className="btn mt-6 text-white bg-[#ff908b]"
               onClick={() => document.getElementById("my_modal_1").showModal()}
             >
               click to get coupon
