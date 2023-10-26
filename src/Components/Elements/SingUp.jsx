@@ -33,8 +33,8 @@ const SingUp = () => {
       .then((res) => {
         console.log(res.user);
         const user = {email , password};
-        fetch("http://localhost:5000/user" ,{
-          method: "POST",
+        fetch("https://trendy-trunk-server-q2waxgv0j-mariz-al-akibs-projects.vercel.app/user" ,{
+          method: "PUT",
           headers: {
             "content-type": "application/json"
           },
@@ -50,7 +50,7 @@ const SingUp = () => {
           icon: "success",
           confirmButtonText: "Cool",
         })
-        // form.reset();
+        form.reset();
         updateProfile(res.user, {
           displayName: name,
           photoURL: picture,

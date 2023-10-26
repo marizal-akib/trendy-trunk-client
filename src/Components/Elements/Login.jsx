@@ -2,7 +2,8 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
-
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
   const location = useLocation();
@@ -23,6 +24,8 @@ const Login = () => {
       })
     .catch(error => {
       console.error(error)
+      toast("Email / Password doesn't match");
+
     })
   }
 
@@ -93,6 +96,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

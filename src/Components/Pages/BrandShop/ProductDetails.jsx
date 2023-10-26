@@ -6,25 +6,28 @@ import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
-  const email = user.email;
+  const email = user._id;
   const allProducts = useLoaderData();
   const { id } = useParams();
 
   const product = allProducts.find((product) => product._id == id);
 
-  const {image, name , description, type, price, rating } = product;
+  const { image, name, description, type, price, rating } = product;
 
   const handleAddToCart = () => {
-    const user = {
+    const id = user._id;
+    
+    const cart = {
+      id,
       email,
       cartProduct: product,
     };
-    fetch("http://localhost:5000/user", {
+    fetch("https://trendy-trunk-server-q2waxgv0j-mariz-al-akibs-projects.vercel.app/user", {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(cart),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +43,7 @@ const ProductDetails = () => {
       });
   };
 
-  console.log(product);
+  // console.log(product);
   return (
     <div>
       <div className="bg-[#f3f0ec] md:flex gap-3 mx-auto py-6">
@@ -49,17 +52,24 @@ const ProductDetails = () => {
         </div>
         <div className="md:w-1/2">
           <h2 className="underline md:text-2xl text-lg font-semibold">
-            {name} 
+            <span className="bg-slate-400 text-slate-400">..</span>
+            <span className=" relative text-red-500 font-extrabold bg-red-500 ">
+              l
+            </span>
+            <span className=" relative text-orange-500 font-extrabold bg-orange-500 ml-1 mr-2">
+              l
+            </span>
+            {name}
           </h2>
-          <p>{price}</p>
-          <p>{rating}</p>
-          <p>{type}</p>
-          <p>{description}</p>
+          <p className="badge badge-error badge-sm">{type}</p>
+          <p className="my-3">{rating}</p>
+          <p className="font-thin text-2xl">{price}</p>
+          <p className="my-3 text-xl font-medium">{description}</p>
 
           <div className="text-center  ">
             <button
               onClick={handleAddToCart}
-              className="btn w-4/5 bg-[#ff9f8b] "
+              className="btn my-6 w-4/5 bg-[#ff9f8b] "
             >
               Add To Cart
             </button>

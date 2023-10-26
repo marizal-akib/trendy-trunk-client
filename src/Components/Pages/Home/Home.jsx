@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import Footer from "../../Elements/Footer";
 import Banner from "./Banner";
 import SAbout from "./SAbout";
-import { useContext } from "react";
-import { CartContext } from "../../../Providers/CartProvider";
+
+
 
 const Home = () => {
-  const {cartInfo} = useContext(CartContext);
+
   const allProducts = useLoaderData();
   const brands = allProducts.filter((products) => products.logo);
-  console.log(cartInfo);
+  console.log(brands);
 
   return (
     <div>
