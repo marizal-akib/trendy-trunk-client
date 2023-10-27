@@ -4,6 +4,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 
+import StarRatings from "react-star-ratings";
+import Rating from "react-rating";
+
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
   const email = user._id;
@@ -62,6 +65,17 @@ const ProductDetails = () => {
             {name}
           </h2>
           <p className="badge badge-error badge-sm">{type}</p>
+          <Rating
+            initialRating={rating}
+            emptySymbol={
+              <img src="/src/assets/star (1) (2).png" className="icon" />
+            }
+            
+            fullSymbol={
+              <img src="/src/assets/star (2).png" className="icon" />
+            }
+            readonly
+          />
           <p className="my-3">{rating}</p>
           <p className="font-thin text-2xl">{price}</p>
           <p className="my-3 text-xl font-medium">{description}</p>
