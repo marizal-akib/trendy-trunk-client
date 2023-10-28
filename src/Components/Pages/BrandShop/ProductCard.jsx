@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BiSolidEditAlt } from "react-icons/bi";
 import Rating from "react-rating";
 
 /* eslint-disable react/prop-types */
@@ -10,12 +9,12 @@ const ProductCard = ({ product }) => {
     <div className="card glass">
       <figure>
         <div>
-          <img src={image} alt="car!" />
+          <img src={image}  alt="car!" />
           <Link
             to={`/update/${_id}`}
             className="btn btn-error text-gray-100 hover:text-gray-700 bg-[#ff7e75] w-full rounded-none"
           >
-            <BiSolidEditAlt></BiSolidEditAlt> Update
+           Update
           </Link>
         </div>
       </figure>
@@ -28,11 +27,11 @@ const ProductCard = ({ product }) => {
           <Rating
             initialRating={rating}
             emptySymbol={
-              <img src="/src/assets/star (1) (2).png" className="icon" />
+              <img src="https://i.ibb.co/28nCbrJ/star-1-2.png" className="icon" />
             }
             
             fullSymbol={
-              <img src="/src/assets/star (2).png" className="icon" />
+              <img src="https://i.ibb.co/TvycKFx/star-2.png" className="icon" />
             }
             readonly
           />

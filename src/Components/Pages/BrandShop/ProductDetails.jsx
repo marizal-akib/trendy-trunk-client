@@ -1,23 +1,34 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Footer from "../../Elements/Footer";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
-
-import StarRatings from "react-star-ratings";
 import Rating from "react-rating";
+
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
-  const email = user._id;
+  const email = user.email;
   const allProducts = useLoaderData();
   const { id } = useParams();
 
-  const product = allProducts.find((product) => product._id == id);
+  console.log(email);
 
+  const product = allProducts.find((product) => product._id == id);
+  
   const { image, name, description, type, price, rating } = product;
 
-  const handleAddToCart = () => {
+  // cart
+//   const [ cart , setCart] = useState()
+
+//  useEffect(() =>{
+   
+   
+// })
+
+
+const handleAddToCart = () => {
+ localStorage.removeItem('cart')
     const id = user._id;
     
     const cart = {
@@ -25,7 +36,7 @@ const ProductDetails = () => {
       email,
       cartProduct: product,
     };
-    fetch("https://trendy-trunk-server-q2waxgv0j-mariz-al-akibs-projects.vercel.app/user", {
+    fetch("http://localhost:5000/user", {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -68,11 +79,11 @@ const ProductDetails = () => {
           <Rating
             initialRating={rating}
             emptySymbol={
-              <img src="/src/assets/star (1) (2).png" className="icon" />
+              <img src="https://i.ibb.co/28nCbrJ/star-1-2.png" className="icon" />
             }
             
             fullSymbol={
-              <img src="/src/assets/star (2).png" className="icon" />
+              <img src="https://i.ibb.co/TvycKFx/star-2.png" className="icon" />
             }
             readonly
           />
