@@ -52,7 +52,7 @@ const MyCart = () => {
       confirmButtonText: "Yes, remove it",
     }).then((res) => {
       if (res.isConfirmed) {
-        fetch(`http://localhost:5000/user/cart`, {
+        fetch(`https://trendy-trunk-server-fvsf5ofec-mariz-al-akibs-projects.vercel.app/user/cart`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

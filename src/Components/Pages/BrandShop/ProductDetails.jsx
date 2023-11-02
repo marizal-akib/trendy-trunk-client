@@ -36,7 +36,7 @@ const handleAddToCart = () => {
       email,
       cartProduct: product,
     };
-    fetch("http://localhost:5000/user", {
+    fetch("https://trendy-trunk-server-fvsf5ofec-mariz-al-akibs-projects.vercel.app/user", {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

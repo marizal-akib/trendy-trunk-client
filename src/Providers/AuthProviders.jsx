@@ -49,7 +49,7 @@ const AuthProviders = ({ children }) => {
         email: currentUser?.email,
         img: currentUser?.photoURL,
       };
-      fetch("http://localhost:5000/user", {
+      fetch("https://trendy-trunk-server-fvsf5ofec-mariz-al-akibs-projects.vercel.app/user", {
         method: "POST",
         headers: {
           "content-type": "application/json",
