@@ -3,7 +3,7 @@
 Welcome to Trendy Trunk! This is a full-stack e-commerce website built using React, Tailwind CSS, and Firebase for authentication. Express.js and MongoDB power the back end. The website offers a variety of features and functionalities for a seamless shopping experience.
 
 ## Live Website
-[Visit the live website here](https://trendy-trunk.web.app/)
+[Trendy Trunk E-commerce Website](https://trendy-trunk.web.app/)
 
 ## Features
 
